@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		576B854D2AFFB49A00AC48E3 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576B854C2AFFB49A00AC48E3 /* MainVC.swift */; };
+		576B854F2AFFB4C000AC48E3 /* FaceSelectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576B854E2AFFB4C000AC48E3 /* FaceSelectVC.swift */; };
+		576B85522AFFB51800AC48E3 /* FaceRecognizerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576B85512AFFB51800AC48E3 /* FaceRecognizerService.swift */; };
 		60788FA62AFFA1400068493C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60788FA52AFFA1400068493C /* AppDelegate.swift */; };
 		60788FA82AFFA1400068493C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60788FA72AFFA1400068493C /* SceneDelegate.swift */; };
 		60788FAA2AFFA1400068493C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60788FA92AFFA1400068493C /* ViewController.swift */; };
@@ -20,6 +23,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		576B854C2AFFB49A00AC48E3 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
+		576B854E2AFFB4C000AC48E3 /* FaceSelectVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceSelectVC.swift; sourceTree = "<group>"; };
+		576B85512AFFB51800AC48E3 /* FaceRecognizerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceRecognizerService.swift; sourceTree = "<group>"; };
 		60788FA22AFFA1400068493C /* FaceReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FaceReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		60788FA52AFFA1400068493C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		60788FA72AFFA1400068493C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -45,6 +51,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		576B85492AFFB46200AC48E3 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				576B854A2AFFB46E00AC48E3 /* View */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		576B854A2AFFB46E00AC48E3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				576B854C2AFFB49A00AC48E3 /* MainVC.swift */,
+				576B854E2AFFB4C000AC48E3 /* FaceSelectVC.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		576B85502AFFB4FB00AC48E3 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				576B85512AFFB51800AC48E3 /* FaceRecognizerService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		60788F992AFFA1400068493C = {
 			isa = PBXGroup;
 			children = (
@@ -67,6 +98,8 @@
 				60788FA52AFFA1400068493C /* AppDelegate.swift */,
 				60788FA72AFFA1400068493C /* SceneDelegate.swift */,
 				60788FA92AFFA1400068493C /* ViewController.swift */,
+				576B85502AFFB4FB00AC48E3 /* Service */,
+				576B85492AFFB46200AC48E3 /* Presenter */,
 				60788FC42AFFA68B0068493C /* Model */,
 				60788FAE2AFFA1400068493C /* Assets.xcassets */,
 				60788FB02AFFA1400068493C /* LaunchScreen.storyboard */,
@@ -165,8 +198,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				60788FAA2AFFA1400068493C /* ViewController.swift in Sources */,
+				576B854F2AFFB4C000AC48E3 /* FaceSelectVC.swift in Sources */,
+				576B854D2AFFB49A00AC48E3 /* MainVC.swift in Sources */,
 				60788FA62AFFA1400068493C /* AppDelegate.swift in Sources */,
 				60788FA82AFFA1400068493C /* SceneDelegate.swift in Sources */,
+				576B85522AFFB51800AC48E3 /* FaceRecognizerService.swift in Sources */,
 				60788FC62AFFA69E0068493C /* OpenAI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -306,7 +342,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 3NP4Z3WZ94;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FaceReader/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -333,7 +369,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 3NP4Z3WZ94;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FaceReader/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
