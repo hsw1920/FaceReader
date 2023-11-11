@@ -51,6 +51,7 @@ class FaceSelectVC: UIViewController {
             $0.setTitleColor(.black, for: .normal)
             $0.backgroundColor = .gray
             $0.layer.cornerRadius = 20
+            $0.addTarget(self, action: #selector(faceReadButtonTapped), for: .touchUpInside)
         }
         
         retryLabel.do {
@@ -127,6 +128,32 @@ class FaceSelectVC: UIViewController {
         openPhotoLibrary()
     }
     
+    @objc func faceReadButtonTapped() {
+        guard let image = selectedImageView.image else { return }
+        apiCall(image: image) { [weak self] result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let response):
+                    if response.info.faceCount > 0 {
+                        // 성공적으로 닮은 유명인 찾음, 응답 출력
+                        print(response)
+                    } else {
+                        // 닮은 유명인을 찾지 못함, 알림 표시
+                        self?.showAlert(title: "Result", message: "잘못된 사진입니다. 다른 사진을 골라주세요.")
+                    }
+                case .failure:
+                    // 오류 발생, 알림 표시
+                    self?.showAlert(title: "Error", message: "🚨삐용삐용\n다시 시도해주세요.")
+                }
+            }
+        }
+    }
+
+    func showAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        self.present(alert, animated: true)
+    }
 }
 
 extension FaceSelectVC: UINavigationControllerDelegate {
