@@ -49,7 +49,7 @@ class FaceSelectVC: UIViewController {
             $0.setTitle("관상 보러가기", for: .normal)
             $0.titleLabel?.font = UIFont.systemFont(ofSize: 24, weight: .bold)
             $0.setTitleColor(.black, for: .normal)
-            $0.backgroundColor = .lightGray
+            $0.backgroundColor = .gray
             $0.layer.cornerRadius = 20
         }
         
@@ -89,7 +89,7 @@ class FaceSelectVC: UIViewController {
         }
         
         selectedImageView.snp.makeConstraints {
-            $0.top.equalTo(titleLabel.snp.bottom).offset(46)
+            $0.top.equalTo(titleLabel.snp.bottom).offset(25)
             $0.centerX.equalToSuperview()
             $0.width.equalToSuperview().multipliedBy(0.5)
             $0.height.equalTo(view.bounds.width / 2)
