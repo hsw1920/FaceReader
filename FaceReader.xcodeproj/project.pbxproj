@@ -16,6 +16,7 @@
 		60788FBD2AFFA5BC0068493C /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 60788FBC2AFFA5BC0068493C /* RxSwift */; };
 		60788FC02AFFA5C80068493C /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 60788FBF2AFFA5C80068493C /* SnapKit */; };
 		60788FC32AFFA5DC0068493C /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 60788FC22AFFA5DC0068493C /* Then */; };
+		60788FC62AFFA69E0068493C /* OpenAI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60788FC52AFFA69E0068493C /* OpenAI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		60788FAE2AFFA1400068493C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		60788FB12AFFA1400068493C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		60788FB32AFFA1400068493C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		60788FC52AFFA69E0068493C /* OpenAI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,11 +67,20 @@
 				60788FA52AFFA1400068493C /* AppDelegate.swift */,
 				60788FA72AFFA1400068493C /* SceneDelegate.swift */,
 				60788FA92AFFA1400068493C /* ViewController.swift */,
+				60788FC42AFFA68B0068493C /* Model */,
 				60788FAE2AFFA1400068493C /* Assets.xcassets */,
 				60788FB02AFFA1400068493C /* LaunchScreen.storyboard */,
 				60788FB32AFFA1400068493C /* Info.plist */,
 			);
 			path = FaceReader;
+			sourceTree = "<group>";
+		};
+		60788FC42AFFA68B0068493C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				60788FC52AFFA69E0068493C /* OpenAI.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -156,6 +167,7 @@
 				60788FAA2AFFA1400068493C /* ViewController.swift in Sources */,
 				60788FA62AFFA1400068493C /* AppDelegate.swift in Sources */,
 				60788FA82AFFA1400068493C /* SceneDelegate.swift in Sources */,
+				60788FC62AFFA69E0068493C /* OpenAI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
