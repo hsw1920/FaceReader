@@ -15,9 +15,11 @@ class ResultVC: UIViewController {
 
     var selectedImage: UIImage?
     
-    private let titleLabel = UILabel()
+    private let titleLabel1 = UILabel()
+    private let titleLabel2 = UILabel()
+    private let titleLabel3 = UILabel()
     private let imageView = UIImageView()
-    private let textView = UIView()
+    let textView = UITextView()
     let textLabel = UILabel()
     private let backButton = UIButton()
     
@@ -34,8 +36,22 @@ class ResultVC: UIViewController {
     }
     
     private func setupAttribute() {
-        titleLabel.do {
-            $0.text = "얼굴 선택"
+        self.navigationController?.isNavigationBarHidden = true
+        
+        titleLabel1.do {
+            $0.text = "당신"
+            $0.textColor = .black
+            $0.font = .boldSystemFont(ofSize: 30)
+            $0.textAlignment = .center
+        }
+        titleLabel2.do {
+            $0.text = "과 닮은 연예인"
+            $0.textColor = .black
+            $0.font = .boldSystemFont(ofSize: 3)
+            $0.textAlignment = .center
+        }
+        titleLabel3.do {
+            $0.text = "의 관상"
             $0.textColor = .black
             $0.font = .boldSystemFont(ofSize: 30)
             $0.textAlignment = .center
@@ -46,18 +62,17 @@ class ResultVC: UIViewController {
             $0.backgroundColor = .lightGray
             $0.layer.cornerRadius = 32
         }
-
         
         textView.do {
             $0.backgroundColor = .lightGray
             $0.layer.cornerRadius = 20
-        }
-        
-        textLabel.do {
-            $0.numberOfLines = 0
             $0.textColor = .black
-            $0.font = .boldSystemFont(ofSize: 20)
+            $0.font = .boldSystemFont(ofSize: 16)
             $0.textAlignment = .center
+            $0.isScrollEnabled = true
+            $0.isEditable = false
+            $0.showsVerticalScrollIndicator = false
+            $0.contentInset = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
         }
         
         backButton.do {
@@ -71,17 +86,24 @@ class ResultVC: UIViewController {
     }
     
     private func setupLayout() {
-        [titleLabel, imageView, textView, backButton].forEach { view.addSubview($0)
+        [titleLabel1, titleLabel2, titleLabel3, imageView, textView, backButton].forEach { view.addSubview($0)
         }
-        textView.addSubview(textLabel)
         
-        titleLabel.snp.makeConstraints {
+        titleLabel1.snp.makeConstraints {
             $0.top.equalToSuperview().inset(91)
-            $0.centerX.equalToSuperview()
+            $0.leading.equalToSuperview().inset(120)
+        }
+        titleLabel2.snp.makeConstraints {
+            $0.bottom.equalTo(titleLabel1)
+            $0.leading.equalTo(titleLabel1.snp.trailing)
+        }
+        titleLabel3.snp.makeConstraints {
+            $0.top.equalTo(titleLabel1)
+            $0.leading.equalTo(titleLabel2.snp.trailing)
         }
         
         imageView.snp.makeConstraints {
-            $0.top.equalTo(titleLabel.snp.bottom).offset(25)
+            $0.top.equalTo(titleLabel1.snp.bottom).offset(25)
             $0.centerX.equalToSuperview()
             $0.width.height.equalTo(200)
         }
@@ -90,11 +112,6 @@ class ResultVC: UIViewController {
             $0.top.equalTo(imageView.snp.bottom).offset(25)
             $0.centerX.equalToSuperview()
             $0.width.height.equalTo(300)
-        }
-        
-        textLabel.snp.makeConstraints {
-            $0.leading.trailing.equalToSuperview().inset(16)
-            $0.centerY.equalToSuperview()
         }
         
         backButton.snp.makeConstraints {

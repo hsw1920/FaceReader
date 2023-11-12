@@ -25,6 +25,8 @@ class APIManager {
             .observe(on: MainScheduler.asyncInstance)
             .subscribe(onNext: { [weak self] response in
                 self?.postFaceReaderRequest(name: response)
+                self?.isValidImageRelay.accept(.success(text: "success"))
+                print("response: \(response)")
             }) { [weak self] _ in
                 self?.isValidImageRelay.accept(.fail(error: "잘못된 사진입니다. 다른 사진을 골라주세요."))
             } onCompleted: {
