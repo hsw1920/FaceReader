@@ -137,11 +137,23 @@ class FaceSelectVC: UIViewController {
             .subscribe(onNext: { [weak self] response in
                 guard let self = self else { return }
                 switch response {
+                case .success:
+                    Observable.from(["거", "거의", "거의 다", "거의 다 되", "거의 다 되었", "거의 다 되었어", "거의 다 되었어요...", "거의 다 되었어요..", "거의 다 되었어요...", "거의 다 되었어요..", "거의 다 되었어요...", "거의 다 되었어요..", "거의 다 되었어요...", "거의 다 되었어요...", "거의 다 되었어요..", "좀 기다려봐요", "거의 다 되었어요..", "기달 ㅎㅎ", "거의 다 되었어요..", "거의 다 되었어요...", "기달 ㅎㅎ 2트", "거의 다 되었어요...", "거의 다 되었어요..", "기달 ㅎㅎ 3트", "거의 다 되었어요..", "거의 다 되었어요..", "기달 ㅎㅎ 4트", "거의 다 되었어요.."])
+                        .concatMap { text in
+                            Observable.just(text)
+                                .delay(.seconds(1), scheduler: MainScheduler.instance)
+                        }
+                        .bind(to: self.titleLabel.rx.text)
+                        .disposed(by: disposeBag)
+                    
+                    
                 case .fail(let error):
                      //닮은 유명인을 찾지 못함, 알림 표시
+                    faceReadButton.isEnabled = true
+                    self.faceReadButton.backgroundColor = .gray
+                    self.faceReadButton.titleLabel?.textColor = .black
+                    titleLabel.text = "얼굴 선택"
                     self.showAlert(title: "Result", message: error)
-                default:
-                    break
                 }
             })
             .disposed(by: disposeBag)
@@ -152,11 +164,19 @@ class FaceSelectVC: UIViewController {
                 guard let self = self else { return }
                 switch response {
                 case .success(let text):
+                    faceReadButton.isEnabled = true
+                    self.faceReadButton.backgroundColor = .gray
+                    self.faceReadButton.titleLabel?.textColor = .black
+                    titleLabel.text = "얼굴 선택"
                     let vc = ResultVC()
                     vc.selectedImage = self.selectedImage
-                    vc.textLabel.rx.text.onNext(text)
+                    vc.textView.rx.text.onNext(text)
                     self.navigationController?.pushViewController(vc, animated: true)
                 case .fail(let error):
+                    self.faceReadButton.backgroundColor = .gray
+                    self.faceReadButton.titleLabel?.textColor = .black
+                    faceReadButton.isEnabled = true
+                    titleLabel.text = "얼굴 선택"
                     self.showAlert(title: "Result", message: error)
                 }
             })
@@ -173,7 +193,11 @@ class FaceSelectVC: UIViewController {
     
     @objc func faceReadButtonTapped() {
         guard let image = selectedImageView.image else { return }
+        self.titleLabel.text = "좀 오래걸려요~~"
         apiManager.checkImageIsValid(image: image)
+        self.faceReadButton.backgroundColor = .black
+        self.faceReadButton.setTitleColor(.white, for: .normal)
+        faceReadButton.isEnabled = false
     }
 
     func showAlert(title: String, message: String) {

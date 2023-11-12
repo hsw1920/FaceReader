@@ -46,7 +46,7 @@ func apiCall(name: String) {
 
 func openAIRequest(name: String) -> Observable<String> {
     return Observable.create { observer in
-        let openAIKey = "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"
+        let openAIKey = "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"
         guard let url = URL(string: "https://api.openai.com/v1/chat/completions") else {
             observer.onError(NSError(domain: "Invalid URL", code: 0, userInfo: nil))
             return Disposables.create()
@@ -62,7 +62,7 @@ func openAIRequest(name: String) -> Observable<String> {
             "messages": [
                 [
                     "role": "system",
-                    "content": "한국 연예인 \(name)의 관상에 대해서 눈, 코, 입에 대해 각 1줄씩 총 3줄 관상을 봐줘 이때 \(name)이라는 단어는 \"당신\" 으로 치환해줘"
+                    "content": "한국 연예인 \(name)의 관상에 대해서 재물운, 애정운, 총운에 대해 각 2 문장, 총 6 문장의 관상을 봐줘. 이때 \(name)이라는 단어는 \"당신\" 으로 치환해줘. 형식은 재물운: ~ \n\n, 애정운: ~ \n\n, 총운: ~ \n\n의 형식으로 해줘"
                 ]
             ],
             "temperature": 0.7
