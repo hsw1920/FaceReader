@@ -10,6 +10,9 @@
 		576B854D2AFFB49A00AC48E3 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576B854C2AFFB49A00AC48E3 /* MainVC.swift */; };
 		576B854F2AFFB4C000AC48E3 /* FaceSelectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576B854E2AFFB4C000AC48E3 /* FaceSelectVC.swift */; };
 		576B85522AFFB51800AC48E3 /* FaceRecognizerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576B85512AFFB51800AC48E3 /* FaceRecognizerService.swift */; };
+		60402E4E2B00864D00B2B291 /* ResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60402E4D2B00864D00B2B291 /* ResultVC.swift */; };
+		60402E502B008B3A00B2B291 /* OpenAIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60402E4F2B008B3A00B2B291 /* OpenAIService.swift */; };
+		60402E522B00927600B2B291 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60402E512B00927600B2B291 /* APIManager.swift */; };
 		60788FA62AFFA1400068493C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60788FA52AFFA1400068493C /* AppDelegate.swift */; };
 		60788FA82AFFA1400068493C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60788FA72AFFA1400068493C /* SceneDelegate.swift */; };
 		60788FAA2AFFA1400068493C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60788FA92AFFA1400068493C /* ViewController.swift */; };
@@ -27,6 +30,9 @@
 		576B854C2AFFB49A00AC48E3 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		576B854E2AFFB4C000AC48E3 /* FaceSelectVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceSelectVC.swift; sourceTree = "<group>"; };
 		576B85512AFFB51800AC48E3 /* FaceRecognizerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceRecognizerService.swift; sourceTree = "<group>"; };
+		60402E4D2B00864D00B2B291 /* ResultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultVC.swift; sourceTree = "<group>"; };
+		60402E4F2B008B3A00B2B291 /* OpenAIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIService.swift; sourceTree = "<group>"; };
+		60402E512B00927600B2B291 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		60788FA22AFFA1400068493C /* FaceReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FaceReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		60788FA52AFFA1400068493C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		60788FA72AFFA1400068493C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +72,7 @@
 			children = (
 				576B854C2AFFB49A00AC48E3 /* MainVC.swift */,
 				576B854E2AFFB4C000AC48E3 /* FaceSelectVC.swift */,
+				60402E4D2B00864D00B2B291 /* ResultVC.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -74,6 +81,8 @@
 			isa = PBXGroup;
 			children = (
 				576B85512AFFB51800AC48E3 /* FaceRecognizerService.swift */,
+				60402E4F2B008B3A00B2B291 /* OpenAIService.swift */,
+				60402E512B00927600B2B291 /* APIManager.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -204,9 +213,12 @@
 				576B854F2AFFB4C000AC48E3 /* FaceSelectVC.swift in Sources */,
 				C1DC0C0C2AFFF9ED00A1B10C /* ClovaResponse.swift in Sources */,
 				576B854D2AFFB49A00AC48E3 /* MainVC.swift in Sources */,
+				60402E522B00927600B2B291 /* APIManager.swift in Sources */,
 				60788FA62AFFA1400068493C /* AppDelegate.swift in Sources */,
 				60788FA82AFFA1400068493C /* SceneDelegate.swift in Sources */,
 				576B85522AFFB51800AC48E3 /* FaceRecognizerService.swift in Sources */,
+				60402E502B008B3A00B2B291 /* OpenAIService.swift in Sources */,
+				60402E4E2B00864D00B2B291 /* ResultVC.swift in Sources */,
 				60788FC62AFFA69E0068493C /* OpenAI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
